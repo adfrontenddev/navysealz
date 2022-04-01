@@ -1,0 +1,346 @@
+/* ===================
+    Reset
+==================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+   padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+   margin: 0;
+}
+
+/* Set core body defaults */
+body {
+   min-height: 100vh;
+   scroll-behavior: smooth;
+   text-rendering: optimizeSpeed;
+   line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+   list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+   text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+   max-width: 100%;
+   display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+   margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+   font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+   * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
+}
+
+/* ===================
+    Custom Properties
+==================== */
+:root {
+   --clr-accent: rgb(236, 164, 0);
+   --clr-secondary-light: rgb(223, 240, 247);
+   --clr-secondary: rgb(155, 209, 229);
+   --clr-main: rgb(0, 88, 149);
+   --clr-gray-7: rgb(77, 77, 77);
+   --clr-gray-5: rgb(128, 128, 128);
+   --clr-gray-4: rgb(179, 179, 179);
+   --clr-gray-2: #f1f6f8;
+   --clr-white: #fff;
+   --clr-gradient-1: linear-gradient(to bottom, #dcebf1 0%, #fafcfd 30%);
+
+   /* font families */
+   --ff-main: 'Ubuntu', sans-serif;
+   --fw-bold: 700;
+   --fw-reg: 400;
+   --fw-light: 300;
+
+   --font-size-1: 1rem;
+   --font-size-2: 1.1rem;
+   --font-size-3: 1.25rem;
+   --font-size-4: 1.5rem;
+   --font-size-5: 2rem;
+   --font-size-6: 2.5rem;
+   --font-size-7: 3rem;
+   --font-size-8: 3.5rem;
+}
+
+/* ===================
+    General Styles
+==================== */
+
+body {
+   font-family: var(--ff-main);
+   font-weight: var(--fw-light);
+   font-size: var(--font-size-2);
+   color: var(--clr-gray-5);
+   line-height: 1.25;
+   background-color: var(--clr-gray-2);
+}
+
+h1,
+h2,
+h3,
+h4 {
+   color: var(--clr-main);
+   margin-top: 1rem;
+   margin-bottom: .5rem;
+}
+
+p {
+   margin-bottom: .75rem;
+}
+
+/* ===================
+    Utilites
+==================== */
+
+.d-flex {
+   display: flex;
+}
+
+.d-block {
+   display: block;
+}
+
+.text-ctr {
+   text-align: center;
+}
+
+.odd-section {
+   background: linear-gradient(to bottom, #dcebf1 0%, #fafcfd 30%);;
+}
+
+.fw-bold {
+   font-weight: var(--fw-bold);
+}
+
+
+
+@media screen and (min-width: 800px) {
+   .col-left {
+      max-width: 55%;
+   }
+   
+   .col-right {
+      max-width: 35%;
+   }
+   
+}
+
+/* ===================
+    Main Styles
+==================== */
+
+.container {
+   margin-inline: auto;
+   max-width: 1230px;
+   background-color: var(--clr-white);
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav {
+   background-color: var(--clr-main);
+  padding: 1rem;
+}
+
+.nav-list {
+
+}
+
+.nav-item {
+
+}
+
+.nav-link {
+   text-decoration: none;
+   color: var(--clr-white);
+   padding: .5rem;
+}
+
+.header-img {
+   min-height: 45vh;  
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   background-image: url(images/header_img.jpg);
+   background-size: cover;
+   background-position: center;
+   border-bottom: 1px solid var(--clr-gray-4);
+}
+
+.header-logo {
+   width: 50%;
+}
+
+@media screen and (min-width: 800px) {
+
+   .header-img {
+      flex-direction: row;
+      justify-content: space-around;
+   }
+
+   .header-logo {
+      width: 35%;
+      margin: 0;
+   }
+}
+
+@media screen and (min-width: 900px) {
+   .header-img {
+      flex-direction: row;
+      justify-content: space-around;
+   }
+   .header-logo {
+      width: 25%;
+      margin: 0;
+   }
+   
+}
+
+
+.cta-btn {
+   width: 25ch;
+   text-transform: uppercase;
+   text-align: center;
+   font-weight: var(--fw-bold);
+   border: none;
+   padding: 1rem 3rem;
+   border-radius: 1rem;
+   box-shadow: 0px 0px 20px rgba(251, 251, 250, 0.75);
+   transition: all 0.5s ease;
+  
+}
+
+.btn-light {
+   color:var(--clr-main);
+   background-color: var(--clr-accent);
+   margin-bottom: 2rem;
+   margin-inline: auto;
+}
+
+.btn-dark {
+   color: var(--clr-white);
+   background-color: var(--clr-main);
+}
+
+.cta-btn:link {
+   text-decoration: none;
+}
+
+.cta-btn:hover, 
+.cta-btn:focus {
+   transform: scale(1.1);
+}
+
+section {
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 2rem;
+   border-bottom: 1px solid var(--clr-gray-4);
+}
+
+
+@media screen and (min-width: 800px) {
+   section {
+      flex-direction: row;
+   justify-content: space-between;
+      padding: 2rem 4rem;
+   }
+}
+@media screen and (min-width: 900px) {
+   section {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 5rem 9rem;
+   }
+}
+
+
+.sidebar-img {
+   margin-bottom: .75rem;
+}
+
+.footer {
+   flex-direction: column;
+   padding: 2rem;
+   background-color: var(--clr-main);
+   color: var(--clr-white);
+   margin-bottom: 5rem;
+   align-items: center;
+   justify-content: space-around;
+}
+
+
+
+.footer h2 {
+   color: var(--clr-white);
+   text-align: center;
+}
+
+
+@media screen and (min-width: 800px) {
+   .footer {
+      padding: 4rem;
+      flex-direction: row;
+   }
+
+   .footer-logo {
+      width: 20%;
+   }
+   
+   .footer-content {
+      width: 60%;
+   }
+   .footer h2 {
+      text-align: left;
+   }
+   
+}
